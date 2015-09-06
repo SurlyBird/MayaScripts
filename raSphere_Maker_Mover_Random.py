@@ -1,6 +1,6 @@
 __author__ = 'ronnie ashlock'
 
-# A learning script that makes a sphere and moves it to a random position. Wee!
+# A learning script that makes a sphere and moves it to a random position. Whee!
 
 from pymel.core import *
 import maya.cmds as mc

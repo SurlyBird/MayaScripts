@@ -1,6 +1,6 @@
 __author__ = 'ronnie ashlock'
 
-# A learning script that makes a sphere at random sizes. Wee!
+# A learning script that makes a sphere at random sizes. Whee!
 
 from pymel.core import *
 import maya.cmds as mc

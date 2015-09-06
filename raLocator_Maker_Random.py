@@ -1,6 +1,6 @@
 __author__ = 'ronnie ashlock'
 
-# A learning script that generates a locator at random locations in the scene. Wee!
+# A learning script that generates a locator at random locations in the scene. Whee!
 
 from pymel.core import *
 import maya.cmds as mc
