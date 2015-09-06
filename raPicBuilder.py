@@ -1,4 +1,8 @@
-__author__ = 'ronnie'
+__author__ = 'ronnie ashlock'
+
+# This is script is designed to load a pre-defined shape library
+# and build a Picatinny rail system.
+
 
 import pymel.core as pmc
 
