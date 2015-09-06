@@ -1,5 +1,7 @@
 __author__ = 'ronnie ashlock'
 
+# Consolidates a lot of reused workflow procedures in one handy GUI.
+
 import pymel.core as pmc
 import maya.mel as mel
 

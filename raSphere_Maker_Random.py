@@ -1,11 +1,13 @@
+__author__ = 'ronnie ashlock'
+
+# A learning script that makes a sphere at random sizes. Wee!
+
 from pymel.core import *
 import maya.cmds as mc
 import maya.mel as mel
 import pymel.core as pm
 import random
 import math
-
-
 
 win = window(title="Locator Maker")
 
