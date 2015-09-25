@@ -6,13 +6,16 @@ import pymel.core as pmc
 import random
 import math
 
-win = window(title="Locator Maker")
-
-frameLayout('User_Feedback',label='Input',width=220,cll=True)
-pmc.columnLayout()
-
-pmc.rowLayout(numberOfColumns=1,cw1=(80))
-pmc.button(label='Make Sphere',w=80, c=lambda *args:polySphere(r = random.uniform(0,12)))
-pmc.setParent('..')
-
-showWindow()
+class SphereMakerRandom():
+    def sphere_maker(self):
+        pmc.polySphere(r = random.uniform(0,12))
+        pmc.setParent('..')
+        
+     
+    pmc.window(width=200, title="Sphere Maker")
+    pmc.columnLayout(adjustableColumn = True)
+    
+    pmc.button(label="Make Sphere", command=sphere_maker)
+    
+    
+    pmc.showWindow()
