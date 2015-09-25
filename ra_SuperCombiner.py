@@ -5,8 +5,6 @@ __author__ = 'ronnie ashlock'
 import pymel.core as pmc
 import maya.mel as mel
 
-import pymel.core as pmc
-
 class SuperCombiner():
 
     def combine_all(self):
