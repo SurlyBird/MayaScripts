@@ -28,7 +28,7 @@ class SuperCombiner():
         pmc.makeIdentity(t = True, a = False)
 
     def freeze_transform(self):
-        pmc.makeIdentity(t = True, a = True)
+        pmc.makeIdentity(t = True, r=True, s=True, a = True)
 
     def center_pivot(self):
         pmc.xform(centerPivots=True)
