@@ -56,7 +56,11 @@ class SuperCombiner():
         z = 'setWireframeOnShadedOption false modelPanel4'
 
         pmc.mel.eval(option)
-
+        
+    def hypeshade(self):
+        pmc.runtime.HypershadeWindow()
+        
+    
     pmc.window(width=200, title='Super Combiner')
     pmc.columnLayout(adjustableColumn = True)
     pmc.button(label = "Combine Selected", command = combine_selected)
@@ -70,6 +74,7 @@ class SuperCombiner():
     pmc.button(label = "Move to Origin", command = move_to_origin)
     pmc.button(label = "WFoS ON", command = wfos_on)
     pmc.button(label = "WFoS OFF", command = wfos_off)
+    pmc.button(label = "HyperShade", command = hypeshade)
 
 
     pmc.showWindow()
