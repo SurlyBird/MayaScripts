@@ -1,0 +1,34 @@
+__author__ = 'ronnie ashlock'
+
+# A broken script that will eventually rescale time for you.
+
+import pymel.core as pmc
+import random
+import math
+
+win = pmc.window(title="Animation Extents Rescaler")
+##
+pmc.frameLayout('User_Feedback',label='User Defined Coordinates',width=120,cll=False)
+pmc.columnLayout()
+
+##
+
+pmc.rowLayout(numberOfColumns=2, bgc=(0.5, 0.0, 0.0), cw2=(80,10))
+pmc.text(label='Start Time:')
+pmc.floatField('step_a',precision=2,width=90,value=0.0)
+pmc.setParent('..')
+
+##
+pmc.rowLayout(numberOfColumns=2, bgc=(0.0, 0.5, 0.0), cw2=(80,10))
+pmc.text(label='End Time:')
+pmc.floatField('step_b',precision=2,width=90,value=0.0)
+pmc.setParent('..')
+
+
+
+## Button to create locator and center pivot
+pmc.button(label='Rescale Time', c=lambda 
+    *args:(pmc.playbackOptions(ast=([pmc.floatField('step_a', q=True,v=True)]), 
+    aet=([pmc.floatField('step_b', q=True,v=True)]))))
+
+pmc.showWindow()
