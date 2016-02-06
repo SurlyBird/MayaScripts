@@ -1,0 +1,7 @@
+def multi_obj_export(self): # 
+import pymel.core as pmc
+def obj_exporter
+        pmc.select("F*") #select all items with 'F' 
+        for item in pmc.selected():
+            path = "\Working\Test_Scenes\Muddy\Mesh-%s"
+            pmc.exportSelected(exportPath=(path % item), type = 'OBJexport')
