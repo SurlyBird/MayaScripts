@@ -1,6 +1,11 @@
 import pymel.core as pmc
-def obj_exporter
-        pmc.select("F*") #select all items with 'F' 
-        for item in pmc.selected():
-            path = "\Working\Test_Scenes\Muddy\Mesh-%s"
-            pmc.exportSelected(exportPath=(path % item), type = 'OBJexport')
+
+def obj_exporter():
+    for item in pmc.selected():
+        item.rename(item.name().replace('To_Be_Replaced*', ''))
+    pmc.select('*Mesh_*')
+    pmc.select('*Shape', d=True)
+    for item in pmc.selected():
+        path = "/drive/location/here/Mesh-%s"
+        pmc.exportAll(force=True, preserveReferences=True, exportPath=(path % item), type = 'OBJexport')
+obj_exporter()
