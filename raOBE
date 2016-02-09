@@ -1,11 +1,30 @@
-import pymel.core as pmc
+#---------------------------------------------------------------------------------
+# Visibility Toggle Tool on Selected
+#---------------------------------------------------------------------------------
 
-def obj_exporter():
-    for item in pmc.selected():
-        item.rename(item.name().replace('To_Be_Replaced*', ''))
-    pmc.select('*Mesh_*')
-    pmc.select('*Shape', d=True)
-    for item in pmc.selected():
-        path = "/drive/location/here/Mesh-%s"
-        pmc.exportAll(force=True, preserveReferences=True, exportPath=(path % item), type = 'OBJexport')
-obj_exporter()
+    def visi_toggle_on(self):
+        visi = list(pmc.ls(sl=True))
+        for item in zip(visi):
+             pmc.setAttr(('%s' % item + ".visibility"), 1)
+    
+    def visi_toggle_off(self):
+        visi = list(pmc.ls(sl=True))
+        for item in zip(visi):
+             pmc.setAttr(('%s' % item + ".visibility"), 0)
+
+
+#---------------------------------------------------------------------------------
+# Exporter Functionality
+#---------------------------------------------------------------------------------
+
+    def multi_obj_export(self):
+		pmc.select('F0*')
+        pmc.select('*Shape', deselect=True)
+        portables = list(pmc.ls(sl=True))
+        pmc.select(deselect=True)
+
+        for port in portables:
+            pmc.select(port)
+            path = "\your\working\directory\-%s"
+            pmc.exportSelected(exportPath=(path % port), type = 'OBJexport')
+            pmc.select(deselect=True)
