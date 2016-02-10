@@ -28,3 +28,49 @@
             path = "\your\working\directory\-%s"
             pmc.exportSelected(exportPath=(path % port), type = 'OBJexport')
             pmc.select(deselect=True)
+            
+            
+#---------------------------------------------------------------------------------
+# Interesting
+#---------------------------------------------------------------------------------
+            
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+for i in range(0, len(l), 2):
+    pmc.currentTime(i)
+    pmc.setKeyframe(v=0, at='visibility')
+    pmc.currentTime(i -1)
+    pmc.setKeyframe(v=1, at='visibility')
+    
+import pymel.core as pmc
+
+#for i in range(150):
+    #pmc.datatypes.Time(i)
+    #pmc.currentTime(i)
+    
+#pmc.findKeyframe(time=140)
+
+
+#---------------------------------------------------------------------------------
+# Interesting
+#---------------------------------------------------------------------------------
+
+for i in pmc.se:
+
+    framey = int(pmc.getCurrentTime())
+    frameystr = str(framey) #converts frame data from int to string
+    the_time = ("F00%s" % frameystr)
+    pmc.select(the_time)
+    pmc.setKeyframe(value=1, attribute='visibility')
+    
+    forward_one = (framey + 1)
+    the_time = ("F00%s" % forward_one)
+    pmc.select(the_time)
+    pmc.setKeyframe()
+    pmc.setKeyframe(v=0, at='visibility')
+    
+    back_two = (framey -1)
+    the_time = ("F00%s" % back_two)
+    pmc.select(the_time)
+    pmc.setKeyframe()
+    pmc.setKeyframe(v=0, at='visibility')
